@@ -1,0 +1,19 @@
+.owner {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--border);
+
+  strong {
+    display: block;
+    font-weight: 600;
+  }
+
+  > div > span {
+    display: block;
+    color: var(--text-subtle);
+    font-size: 13px;
+  }
+}

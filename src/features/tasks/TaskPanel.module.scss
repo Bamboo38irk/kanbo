@@ -1,0 +1,278 @@
+.doneButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  height: 36px;
+  padding: 0 14px;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius);
+  background: var(--surface);
+  font-weight: 600;
+  transition:
+    background-color 0.2s,
+    border-color 0.2s,
+    color 0.2s;
+
+  &:hover {
+    border-color: var(--green);
+    color: var(--green);
+  }
+}
+
+.doneButtonActive,
+.doneButtonActive:hover {
+  border-color: var(--green);
+  background: var(--green-soft);
+  color: var(--green);
+}
+
+.delete {
+  margin-left: auto;
+}
+
+.title {
+  width: 100%;
+  margin: -6px 0 0 -10px;
+  padding: 6px 10px;
+  border: 0;
+  border-radius: var(--radius);
+  background: transparent;
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+  resize: none;
+  field-sizing: content;
+  transition: background-color 0.15s;
+
+  &:hover,
+  &:focus {
+    background: var(--surface-muted);
+    outline: none;
+  }
+
+  &::placeholder {
+    color: var(--text-subtle);
+  }
+
+  @include mobile {
+    font-size: 22px;
+  }
+}
+
+.error {
+  margin-top: 4px;
+  color: var(--red);
+  font-size: 13px;
+}
+
+.meta {
+  margin-top: 4px;
+  color: var(--text-subtle);
+  font-size: 13px;
+}
+
+.fields {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin: 24px 0 0;
+
+  > div {
+    display: grid;
+    grid-template-columns: 120px minmax(0, 1fr);
+    column-gap: 16px;
+    align-items: center;
+    min-height: 40px;
+
+    @include mobile {
+      grid-template-columns: 100px minmax(0, 1fr);
+      column-gap: 12px;
+      align-items: start;
+      padding: 4px 0;
+
+      dt {
+        padding-top: 6px;
+      }
+    }
+  }
+
+  dt {
+    color: var(--text-muted);
+    font-size: 14px;
+  }
+
+  dd {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px;
+    margin: 0;
+  }
+}
+
+.status {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 30px;
+  padding: 0 10px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--surface);
+  font-size: 13px;
+  font-weight: 500;
+  transition:
+    background-color 0.15s,
+    border-color 0.15s,
+    color 0.15s;
+
+  &:hover {
+    border-color: var(--border-strong);
+  }
+}
+
+.status {
+  color: var(--tone-text);
+}
+
+.statusActive,
+.statusActive:hover {
+  border-color: transparent;
+  background: var(--tone-soft);
+  color: var(--tone-text);
+  font-weight: 600;
+}
+
+.section {
+  margin-top: 28px;
+
+  h3 {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    margin-bottom: 10px;
+    font-size: 15px;
+    font-weight: 650;
+
+    span {
+      color: var(--text-subtle);
+      font-size: 13px;
+      font-weight: 500;
+    }
+  }
+}
+
+.description {
+  width: 100%;
+  min-height: 96px;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+  line-height: 1.5;
+  resize: vertical;
+  field-sizing: content;
+  transition: border-color 0.15s;
+
+  &:hover {
+    border-color: var(--border-strong);
+  }
+
+  &:focus {
+    border-color: var(--accent);
+    outline: none;
+  }
+
+  &::placeholder {
+    color: var(--text-subtle);
+  }
+}
+
+.subtasks {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  li {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    min-height: 40px;
+    padding: 0 6px;
+    border-bottom: 1px solid var(--border);
+    transition: background-color 0.15s;
+
+    &:first-child {
+      border-top: 1px solid var(--border);
+    }
+
+    &:hover {
+      background: var(--surface-muted);
+    }
+  }
+
+  label {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+  }
+
+  input {
+    width: 18px;
+    height: 18px;
+    margin: 0;
+    accent-color: var(--green);
+  }
+}
+
+.subtaskDone {
+  color: var(--text-subtle);
+  text-decoration: line-through;
+}
+
+.removeSubtask {
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  border: 0;
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--text-subtle);
+  opacity: 0;
+  transition:
+    opacity 0.15s,
+    color 0.15s;
+
+  li:hover & {
+    opacity: 1;
+  }
+
+  &:hover {
+    color: var(--red);
+  }
+
+  @media (hover: none) {
+    opacity: 1;
+  }
+}
+
+.addSubtask {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 40px;
+  padding: 0 7px;
+  color: var(--text-subtle);
+
+  input {
+    flex: 1;
+    border: 0;
+    outline: none;
+    background: transparent;
+  }
+}

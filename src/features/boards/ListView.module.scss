@@ -1,0 +1,174 @@
+.groups {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.groupTitle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 17px;
+  font-weight: 650;
+}
+
+.count {
+  min-width: 24px;
+  height: 22px;
+  padding: 0 7px;
+  border-radius: 999px;
+  background: var(--column);
+  color: var(--text-muted);
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 22px;
+  text-align: center;
+}
+
+.wrapper {
+  overflow-x: auto;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+}
+
+.table {
+  width: 100%;
+  min-width: 880px;
+  border-collapse: collapse;
+  table-layout: fixed;
+
+  th,
+  td {
+    padding: 11px 16px;
+    border-bottom: 1px solid var(--border);
+    text-align: left;
+    vertical-align: middle;
+  }
+
+  th {
+    padding-top: 9px;
+    padding-bottom: 9px;
+    background: var(--surface-muted);
+    color: var(--text-subtle);
+    font-size: 12px;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+
+  tbody tr {
+    cursor: pointer;
+    transition: background-color 0.15s;
+
+    &:hover {
+      background: var(--surface-muted);
+    }
+
+    &:last-child td {
+      border-bottom: 0;
+    }
+  }
+}
+
+.colStatus {
+  width: 140px;
+}
+
+.colPeople {
+  width: 120px;
+}
+
+.colDue {
+  width: 110px;
+}
+
+.title {
+  display: block;
+  font-weight: 600;
+  @include ellipsis;
+}
+
+.description {
+  display: block;
+  color: var(--text-subtle);
+  font-size: 13px;
+  @include ellipsis;
+}
+
+.status {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 24px;
+  padding: 0 8px;
+  border-radius: var(--radius-sm);
+  background: var(--tone-soft);
+  color: var(--tone-text);
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.due {
+  white-space: nowrap;
+}
+
+.overdue {
+  color: var(--red);
+  font-weight: 600;
+}
+
+@include mobile {
+  .wrapper {
+    overflow: visible;
+  }
+
+  .table {
+    min-width: 0;
+
+    colgroup,
+    thead {
+      display: none;
+    }
+
+    tbody,
+    td {
+      display: block;
+    }
+
+    tbody tr {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px 12px;
+      padding: 12px 14px;
+      border-bottom: 1px solid var(--border);
+
+      &:last-child {
+        border-bottom: 0;
+      }
+    }
+
+    td {
+      padding: 0;
+      border: 0;
+
+      &:first-child {
+        flex: 1 1 100%;
+        min-width: 0;
+      }
+    }
+  }
+
+  .due {
+    margin-left: auto;
+    color: var(--text-muted);
+    font-size: 13px;
+  }
+}

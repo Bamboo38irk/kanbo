@@ -1,0 +1,25 @@
+.group {
+  display: flex;
+  align-items: center;
+}
+
+.item,
+.more {
+  border: 2px solid var(--surface);
+  border-radius: 50%;
+  box-sizing: content-box;
+
+  & + & {
+    margin-left: -5px;
+  }
+}
+
+.more {
+  display: inline-grid;
+  place-items: center;
+  margin-left: -5px;
+  background: var(--surface);
+  color: var(--text-muted);
+  font-size: 11px;
+  font-weight: 700;
+}

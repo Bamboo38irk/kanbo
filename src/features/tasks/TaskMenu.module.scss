@@ -1,0 +1,32 @@
+.menu {
+  flex-shrink: 0;
+  margin: -4px -6px -4px 0;
+}
+
+.trigger {
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  border: 0;
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--text-subtle);
+
+  &:hover,
+  &[aria-expanded='true'] {
+    background: var(--surface-muted);
+    color: var(--text);
+  }
+}
+
+.status {
+  color: var(--tone-text);
+  font-weight: 600;
+}
+
+.check {
+  margin-left: auto;
+  color: var(--text) !important;
+}

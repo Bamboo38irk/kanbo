@@ -1,0 +1,170 @@
+.empty {
+  color: var(--text-subtle);
+  font-size: 13px;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.comment {
+  display: flex;
+  gap: 12px;
+  padding: 12px 14px;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: var(--surface-muted);
+}
+
+.mine {
+  border-color: #c6e6ef;
+  background: #f0f9fb;
+}
+
+.content {
+  flex: 1;
+  min-width: 0;
+}
+
+.header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 4px 8px;
+  margin-bottom: 4px;
+
+  strong {
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  time {
+    color: var(--text-subtle);
+    font-size: 12px;
+  }
+}
+
+.edited {
+  color: var(--text-subtle);
+  font-size: 12px;
+  font-style: italic;
+}
+
+.actions {
+  display: flex;
+  gap: 2px;
+  margin: -6px -8px -6px auto;
+
+  button {
+    width: 30px;
+    height: 30px;
+  }
+
+  .danger:hover {
+    background: var(--red-soft);
+    color: var(--red);
+  }
+}
+
+.text {
+  font-size: 14px;
+  line-height: 1.5;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.editor {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  textarea {
+    width: 100%;
+    min-height: 64px;
+    padding: 8px 10px;
+    border: 1px solid var(--accent);
+    border-radius: var(--radius);
+    background: var(--surface);
+    line-height: 1.5;
+    resize: vertical;
+    field-sizing: content;
+    box-shadow: 0 0 0 3px var(--accent-soft);
+
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+.editorButtons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.form {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 28px 18px;
+  border-top: 1px solid var(--border);
+  background: var(--surface-muted);
+
+  @include mobile {
+    padding: 12px 16px;
+  }
+}
+
+.field {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  gap: 8px;
+  height: 44px;
+  padding: 0 6px 0 14px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--surface);
+  transition:
+    border-color 0.15s,
+    box-shadow 0.15s;
+
+  &:focus-within {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px var(--accent-soft);
+  }
+
+  input {
+    flex: 1;
+    min-width: 0;
+    border: 0;
+    outline: none;
+    background: transparent;
+  }
+}
+
+.send {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: 0;
+  border-radius: 9px;
+  background: var(--primary);
+  color: #fff;
+  transition:
+    background-color 0.15s,
+    opacity 0.15s;
+
+  &:disabled {
+    background: var(--column);
+    color: var(--text-subtle);
+  }
+}

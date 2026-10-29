@@ -1,0 +1,82 @@
+.board {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  margin: 0 -32px;
+  padding: 0 32px 16px;
+  overflow-x: auto;
+
+  > * {
+    flex: 0 0 320px;
+  }
+
+  @include mobile {
+    gap: 10px;
+    margin: 0 -16px;
+    padding: 0 16px 12px;
+    scroll-padding: 16px;
+    scroll-snap-type: x mandatory;
+
+    > * {
+      flex-basis: 84vw;
+      scroll-snap-align: start;
+    }
+  }
+}
+
+.boardPreview {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 320px;
+  height: 52px;
+  padding: 0 16px;
+  border-radius: 16px;
+  background: var(--column);
+  box-shadow: var(--shadow-lg);
+  cursor: grabbing;
+  transform: rotate(2deg);
+
+  strong {
+    font-size: 16px;
+    font-weight: 650;
+  }
+
+  span {
+    color: var(--text-subtle);
+    font-weight: 500;
+  }
+}
+
+.addBoard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 220px;
+  border: 1.5px dashed var(--border-strong);
+  border-radius: 16px;
+  background: transparent;
+  color: var(--text-muted);
+  font-weight: 600;
+  transition:
+    border-color 0.15s,
+    background-color 0.15s,
+    color 0.15s;
+
+  &:hover {
+    border-color: var(--primary);
+    background: var(--surface);
+    color: var(--primary);
+  }
+}
+
+.addIcon {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  background: var(--column);
+}

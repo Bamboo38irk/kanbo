@@ -1,0 +1,147 @@
+.calendar {
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 16px 14px 20px;
+  border-bottom: 1px solid var(--border);
+
+  h2 {
+    font-size: 18px;
+    font-weight: 600;
+  }
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.weekDays,
+.grid {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+}
+
+.weekDays span {
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--border);
+  color: var(--text-subtle);
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+
+  @include mobile {
+    padding: 8px 4px;
+    text-align: center;
+  }
+}
+
+.day {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-height: 118px;
+  padding: 8px;
+  border-right: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+
+  &:nth-child(7n) {
+    border-right: 0;
+  }
+
+  &:hover .add {
+    opacity: 1;
+  }
+
+  @include mobile {
+    min-height: 64px;
+    padding: 4px;
+  }
+}
+
+.otherMonth {
+  background: var(--surface-muted);
+
+  .dayNumber {
+    color: var(--text-subtle);
+  }
+}
+
+.dayHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.dayNumber {
+  display: grid;
+  place-items: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.today .dayNumber {
+  background: var(--primary);
+  color: #fff;
+}
+
+.add {
+  display: grid;
+  place-items: center;
+  width: 22px;
+  height: 22px;
+  padding: 0;
+  border: 0;
+  border-radius: var(--radius-sm);
+  background: var(--column);
+  color: var(--text);
+  opacity: 0;
+  transition: opacity 0.15s;
+
+  @include mobile {
+    display: none;
+  }
+}
+
+.task {
+  width: 100%;
+  padding: 3px 8px;
+  border: 0;
+  border-left: 3px solid var(--primary);
+  border-radius: 4px;
+  background: var(--accent-soft);
+  font-size: 12px;
+  font-weight: 500;
+  text-align: left;
+  transition: background-color 0.15s;
+  @include ellipsis;
+
+  &:hover {
+    background: #cdebf3;
+  }
+
+  @include mobile {
+    height: 6px;
+    padding: 0;
+    border-left: 0;
+    background: var(--primary);
+    font-size: 0;
+  }
+}
+
+.taskDone {
+  color: var(--text-subtle);
+  text-decoration: line-through;
+}

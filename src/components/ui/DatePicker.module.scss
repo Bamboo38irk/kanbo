@@ -1,0 +1,142 @@
+.wrapper {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.clear {
+  width: 30px;
+  height: 30px;
+}
+
+.trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  height: 34px;
+  margin-left: -10px;
+  padding: 0 10px;
+  border: 1px solid transparent;
+  border-radius: var(--radius);
+  background: transparent;
+  font-weight: 500;
+  transition:
+    background-color 0.15s,
+    border-color 0.15s;
+
+  svg {
+    color: var(--text-subtle);
+  }
+
+  &:hover,
+  &[aria-expanded='true'] {
+    background: var(--surface-muted);
+  }
+}
+
+.empty {
+  color: var(--text-subtle);
+  font-weight: 400;
+}
+
+.picker {
+  padding: 4px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+
+  strong {
+    font-size: 13px;
+    font-weight: 650;
+  }
+
+  button {
+    width: 28px;
+    height: 28px;
+  }
+}
+
+.weekDays,
+.days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 2px;
+}
+
+.weekDays {
+  margin-bottom: 4px;
+}
+
+.weekDays span {
+  padding: 2px 0;
+  color: var(--text-subtle);
+  font-size: 10px;
+  font-weight: 600;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.day {
+  height: 30px;
+  padding: 0;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  font-size: 12px;
+  font-weight: 500;
+  transition:
+    background-color 0.15s,
+    color 0.15s;
+
+  &:hover {
+    background: var(--surface-muted);
+  }
+}
+
+.otherMonth {
+  color: var(--text-subtle);
+}
+
+.today {
+  color: var(--primary);
+  font-weight: 700;
+  box-shadow: inset 0 0 0 1px var(--accent-soft);
+}
+
+.selected,
+.selected:hover {
+  background: var(--primary);
+  color: #fff;
+}
+
+.shortcuts {
+  display: flex;
+  gap: 6px;
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid var(--border);
+
+  button {
+    flex: 1 1 auto;
+    height: 30px;
+    padding: 0 10px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: var(--surface);
+    font-size: 12px;
+    font-weight: 500;
+    white-space: nowrap;
+    transition:
+      border-color 0.15s,
+      color 0.15s;
+
+    &:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+    }
+  }
+}

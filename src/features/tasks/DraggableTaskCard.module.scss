@@ -1,0 +1,35 @@
+.wrapper {
+  position: relative;
+}
+
+.line {
+  position: absolute;
+  right: 6px;
+  left: 10px;
+  z-index: 2;
+  height: 3px;
+  border-radius: 3px;
+  background: var(--primary);
+  pointer-events: none;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: -3px;
+    left: -8px;
+    width: 9px;
+    height: 9px;
+    border: 2px solid var(--primary);
+    border-radius: 50%;
+    background: var(--surface);
+    box-sizing: border-box;
+  }
+
+  &[data-position='before'] {
+    top: -6px;
+  }
+
+  &[data-position='after'] {
+    bottom: -6px;
+  }
+}

@@ -1,0 +1,77 @@
+.trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+  border: 1px solid transparent;
+  border-radius: var(--radius);
+  font-weight: 500;
+  text-align: left;
+  transition:
+    background-color 0.15s,
+    border-color 0.15s,
+    box-shadow 0.15s;
+
+  > svg:first-child {
+    flex-shrink: 0;
+    color: var(--text-subtle);
+  }
+
+  &[aria-expanded='true'] .chevron {
+    transform: rotate(180deg);
+  }
+}
+
+.field {
+  height: 40px;
+  padding: 0 10px 0 12px;
+  border-color: var(--border);
+  background: var(--surface);
+
+  &:hover {
+    border-color: var(--border-strong);
+  }
+
+  &[aria-expanded='true'] {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px var(--accent-soft);
+  }
+}
+
+.inline {
+  height: 34px;
+  margin-left: -10px;
+  padding: 0 8px 0 10px;
+  background: transparent;
+
+  &:hover,
+  &[aria-expanded='true'] {
+    background: var(--surface-muted);
+  }
+}
+
+.value {
+  @include ellipsis;
+}
+
+.value[data-tone],
+.optionLabel[data-tone] {
+  color: var(--tone-text);
+  font-weight: 600;
+}
+
+.chevron {
+  flex-shrink: 0;
+  margin-left: auto;
+  color: var(--text-subtle);
+  transition: transform 0.2s;
+}
+
+.optionLabel {
+  flex: 1;
+  @include ellipsis;
+}
+
+.check {
+  color: var(--primary) !important;
+}

@@ -1,0 +1,149 @@
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 14px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--surface);
+  box-shadow: var(--shadow);
+  cursor: pointer;
+  transition:
+    background-color 0.2s,
+    border-color 0.2s,
+    box-shadow 0.2s,
+    transform 0.2s;
+  touch-action: manipulation;
+
+  &:hover {
+    border-color: #a9bcd6;
+    box-shadow: 0 8px 20px rgba(15, 27, 45, 0.12);
+    transform: translateY(-1px);
+  }
+}
+
+.done {
+  gap: 6px;
+  padding: 10px 12px;
+  border-color: transparent;
+  background: rgba(255, 255, 255, 0.45);
+  box-shadow: none;
+
+  &:hover {
+    border-color: #a9bcd6;
+    background: var(--surface);
+    box-shadow: 0 6px 16px rgba(15, 27, 45, 0.1);
+  }
+}
+
+.doneRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.doneIcon {
+  flex-shrink: 0;
+  color: var(--green);
+}
+
+.doneTitle {
+  flex: 1;
+  min-width: 0;
+  color: var(--text-muted);
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: line-through;
+  text-decoration-color: var(--text-subtle);
+  @include ellipsis;
+}
+
+.doneMeta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-left: 26px;
+  color: var(--text-subtle);
+  font-size: 12px;
+  opacity: 0.8;
+}
+
+.placeholder {
+  border: 1.5px dashed var(--text-subtle);
+  background: transparent;
+  box-shadow: none;
+
+  > * {
+    visibility: hidden;
+  }
+}
+
+.overlay {
+  box-shadow: var(--shadow-lg);
+  cursor: grabbing;
+  transform: rotate(2deg);
+}
+
+.top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.status {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 24px;
+  padding: 0 8px;
+  border-radius: var(--radius-sm);
+  background: var(--tone-soft);
+  color: var(--tone-text);
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.title {
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.description {
+  margin-top: -4px;
+  color: var(--text-muted);
+  font-size: 13px;
+  line-height: 1.45;
+  @include clamp(2);
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  min-height: 28px;
+}
+
+.meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--text-subtle);
+  font-size: 12px;
+  font-weight: 500;
+
+  > span {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    white-space: nowrap;
+  }
+}
+
+.overdue {
+  color: var(--red);
+}
